@@ -1,0 +1,9 @@
+streamlit
+agno
+google-genai
+lancedb
+pyautogui
+beautifulsoup4
+beeply
+duckduckgo-search
+tantivy
