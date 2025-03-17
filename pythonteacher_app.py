@@ -31,7 +31,7 @@ knowledge_base = WebsiteKnowledgeBase(
 )
 agent = Agent(
     model=Gemini("gemini-2.0-flash-exp"),
-    #knowledge=knowledge_base,
+    knowledge=knowledge_base,
     debug_mode=True,
     search_knowledge=True,
     tools=[DuckDuckGoTools()], show_tool_calls=True,
@@ -51,24 +51,6 @@ agent = Agent(
         "Ask the user to use the active watch mode if they need active help as they code, it'll enable you to watch their screen"
     ]
 )
-# '''reply=agent.run("how to print hello world")
-# print(reply,"+\n"+reply.content)
-# stro=str(reply.content)'''
-# test=True
-# '''
-# while test:
-#     msg=input(">>: ")
-#     if "screen" in msg:
-#         print("taking screenshot in 10 seconds")
-#         time.sleep(10)
-#         image1 = pyautogui.screenshot("image1.png")
-#         image_path = Path(__file__).parent.joinpath("image1.png")
-#         agent.print_response(
-#             msg,
-#             images=[Image(filepath=image_path)],
-#             stream=True,)
-#     else:
-#         agent.print_response(msg,stream=True)'''
 st.title("PyTeacher AI")
 on = st.toggle("Active Watch mode")
 if on:
